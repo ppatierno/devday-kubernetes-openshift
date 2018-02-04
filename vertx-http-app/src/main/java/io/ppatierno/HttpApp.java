@@ -31,7 +31,7 @@ public class HttpApp {
 
                     HttpServerResponse response = request.response();
 
-                    String body = "Hello Vert.x HTTP from " + request.host();
+                    String body = "Hello Vert.x HTTP from " + System.getenv("HOSTNAME");
                     response.headers().add("Content-Length", String.valueOf(body.length()));
                     response.write(body).end();
 
