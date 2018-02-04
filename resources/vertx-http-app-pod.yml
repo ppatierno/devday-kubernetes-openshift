@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vertx-http-app
+  labels:
+    app: vertx-http-app
+spec:
+  containers:
+  - image: ppatierno/vertx-http-app:latest
+    imagePullPolicy: IfNotPresent
+    name: vertx-http-app
+    ports:
+    - containerPort: 8080
+      protocol: TCP

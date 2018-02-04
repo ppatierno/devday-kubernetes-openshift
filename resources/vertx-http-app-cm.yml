@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vertx-http-app-cm
+data:
+  my-env: "My env value"
+  my-file.txt: "My file content"

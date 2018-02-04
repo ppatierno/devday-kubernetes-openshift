@@ -20,9 +20,28 @@ package io.ppatierno;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServerResponse;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class HttpApp {
 
+    private static String myFile = null;
+    private static String myEnv = null;
+
     public static void main(String[] args) {
+
+        try {
+            BufferedReader b = new BufferedReader(new FileReader("/tmp/my-file.txt"));
+            myFile = b.readLine();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        myEnv = System.getenv("MY_ENV");
 
         Vertx vertx = Vertx.vertx();
 
@@ -32,6 +51,12 @@ public class HttpApp {
                     HttpServerResponse response = request.response();
 
                     String body = "Hello Vert.x HTTP from " + System.getenv("HOSTNAME");
+                    if (myEnv != null) {
+                        body = body + "\n my-env = " + myEnv;
+                    }
+                    if (myFile != null) {
+                        body = body + "\n my-file = " + myFile;
+                    }
                     response.headers().add("Content-Length", String.valueOf(body.length()));
                     response.write(body).end();
 
