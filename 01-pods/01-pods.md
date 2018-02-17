@@ -36,3 +36,11 @@ Deletion
     kubectl delete pods vertx-http-app
 
 Pod is deleted and not rescheduled.
+
+Liveness probe, pod creation.
+
+    kubectl create -f vertx-http-app-pod-liveness.yml
+    
+The liveness probe starts to execute HTTP GET requests after 15 (`initialDelaySeconds`) seconds and then every 
+10 seconds (default `periodSeconds`). The application returns HTTP 501 error after the 3 requests but the pod isn't restart 
+after the first failure but after 3 consecutive failures (default `failureThreshold`). 

@@ -18,6 +18,14 @@
       <artifactId>vertx-core</artifactId>
       <version>${vertx.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
@@ -27,6 +35,7 @@
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
           <execution>
+            <id>build-vertx-http-app</id>
             <configuration>
               <archive>
                 <manifest>
@@ -37,6 +46,25 @@
                 <descriptorRef>jar-with-dependencies</descriptorRef>
               </descriptorRefs>
               <finalName>vertx-http-app</finalName>
+              <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>build-vertx-http-app-failing</id>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>io.ppatierno.HttpAppFailing</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+              <finalName>vertx-http-app-failing</finalName>
               <appendAssemblyId>false</appendAssemblyId>
             </configuration>
             <phase>package</phase>
