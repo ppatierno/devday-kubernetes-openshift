@@ -5,6 +5,9 @@ metadata:
   labels:
     app: vertx-http-app
 spec:
+  # un-comment the following lines for node selection
+  #nodeSelector:
+    #disktype: ssd
   containers:
   - image: ppatierno/vertx-http-app:latest
     imagePullPolicy: IfNotPresent
