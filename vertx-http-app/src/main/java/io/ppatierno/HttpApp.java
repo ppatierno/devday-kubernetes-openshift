@@ -18,6 +18,8 @@ package io.ppatierno;
 
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServerResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -25,6 +27,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class HttpApp {
+
+    private static Logger log = LoggerFactory.getLogger(HttpAppFailing.class);
 
     private static String myFile = null;
     private static String myEnv = null;
@@ -56,9 +60,18 @@ public class HttpApp {
                     if (myFile != null) {
                         body = body + "\n my-file = " + myFile;
                     }
+
+                    log.info("Replying : {}", body);
+
                     response.headers().add("Content-Length", String.valueOf(body.length()));
                     response.write(body).end();
 
-                }).listen(8080);
+                }).listen(8080, ar -> {
+                    if (ar.succeeded()) {
+                        log.info("HTTP server started !");
+                    } else {
+                        log.error("Error on starting the HTTP server !");
+                    }
+                });
     }
 }
