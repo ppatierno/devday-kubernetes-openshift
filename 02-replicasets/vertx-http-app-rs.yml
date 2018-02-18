@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: vertx-http-app
+spec:
+  replicas: 3
+  # selector is not mandatory. Without it, Kubernetes creates it
+  # matching the labels in the template
+  selector:
+    matchLabels:
+      app: vertx-http-app
+  template:
+    metadata:
+      name: vertx-http-app
+      labels:
+        app: vertx-http-app
+    spec:
+      containers:
+      - image: ppatierno/vertx-http-app:latest
+        imagePullPolicy: IfNotPresent
+        name: vertx-http-app
+        ports:
+        - containerPort: 8080
+          protocol: TCP
