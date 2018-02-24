@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fortune
+spec:
+  containers:
+    - image: ppatierno/fortune
+      imagePullPolicy: IfNotPresent
+      name: html-generator
+      volumeMounts:
+        - name: html
+          mountPath: /var/htdocs
+    - image: ppatierno/fortune-web-server:latest
+      imagePullPolicy: IfNotPresent
+      name: fortune-web-server
+      volumeMounts:
+        - name: html
+          mountPath: /usr/share/fortunews/html
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+  volumes:
+    - name: html
+      emptyDir: { }
