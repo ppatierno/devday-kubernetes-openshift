@@ -72,6 +72,25 @@
               <goal>single</goal>
             </goals>
           </execution>
+          <execution>
+            <id>build-fortune-web-server</id>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>io.ppatierno.FortuneWebServer</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+              <finalName>fortune-web-server</finalName>
+              <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
         </executions>
       </plugin>
     </plugins>

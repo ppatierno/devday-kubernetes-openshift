@@ -1,0 +1,5 @@
+FROM openjdk:8
+
+COPY target/fortune-web-server.jar /
+
+CMD ["java", "-Dvertx.cacheDirBase=/tmp", "-jar", "fortune-web-server.jar"]
