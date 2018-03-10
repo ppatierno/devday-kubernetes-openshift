@@ -1,0 +1,5 @@
+FROM openjdk:8
+
+COPY target/vertx-http-app-v2.jar /
+
+CMD ["java", "-Dvertx.cacheDirBase=/tmp", "-jar", "vertx-http-app-v2.jar"]

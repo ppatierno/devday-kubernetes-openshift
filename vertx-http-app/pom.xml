@@ -73,6 +73,25 @@
             </goals>
           </execution>
           <execution>
+            <id>build-vertx-http-app-v2</id>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>io.ppatierno.HttpAppV2</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+              <finalName>vertx-http-app-v2</finalName>
+              <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+          <execution>
             <id>build-fortune-web-server</id>
             <configuration>
               <archive>
