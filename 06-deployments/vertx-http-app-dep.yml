@@ -11,9 +11,12 @@ spec:
         app: vertx-http-app
     spec:
       containers:
-      - image: ppatierno/vertx-http-app:latest
+      - image: ppatierno/vertx-http-app:v1
         imagePullPolicy: IfNotPresent
         name: vertx-http-app
         ports:
         - containerPort: 8080
           protocol: TCP
+  # for slowing down the rolling update process
+  # how long a newly created pod should be ready before the pod is treated as available
+  minReadySeconds: 10

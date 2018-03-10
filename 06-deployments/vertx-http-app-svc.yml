@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vertx-http-app
+spec:
+  # one of the ways for accessing the service from outside the cluster, through a port on the node
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: vertx-http-app
