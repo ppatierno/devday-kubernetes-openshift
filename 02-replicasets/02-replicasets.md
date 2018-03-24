@@ -4,7 +4,7 @@ Creation
 
     kubectl create -f vertx-http-app-rs.yml
 
-> for the following examples is interesting to show watch the pods in this way `watch -n 1 kubectl get pods --show-labels`
+> for the following examples is interesting to watch the pods in this way `watch -n 1 kubectl get pods --show-labels`
     
 Deleting one pod, a new one will be restarted.
 
