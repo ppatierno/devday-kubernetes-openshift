@@ -8,5 +8,6 @@ Following the different examples provided in this playground.
 * [Volumes](04-volumes/04-volumes.md)
 * [ConfigMaps](05-configmaps/05-configmaps.md)
 * [Deployments](06-deployments/06-deployments.md)
+* [Ingress](07-ingress/07-ingress.md)
 
 The Vert.x based applications used into the Docker images for this playground can be built as described [here](./vertx-http-app/README.md).

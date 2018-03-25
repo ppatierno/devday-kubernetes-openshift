@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: vertx-http-app
+spec:
+  rules:
+  - host: vertx.http-app.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: vertx-http-app
+          servicePort: 8080
