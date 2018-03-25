@@ -29,9 +29,15 @@ Finally the "fortune" application and the related webserver.
     docker build -t ppatierno/fortune-web-server:latest f ./src/docker-images/Dockerfile-fortune-webserver .
     docker build -t ppatierno/fortune:latest -f ../fortune/Dockerfile .
 
-# Using Minishift
+# Using Minishift or Minikube
 
-If you are going to use Minishift for the examples and you have already built the images on your local Docker instance, 
-you can push your locally built images to the Minishift virtual machine (instead of rebuilding them) with following command :
+If you are going to use Minishift or Minikube for the examples and you have already built the images on your local Docker instance, 
+you can push your locally built images to the Minishift or Minikube virtual machine (instead of rebuilding them).
+ 
+For Minishift, with following command :
 
     docker save <image> | minishift ssh docker load
+
+For Minikube, with the following command :
+
+    docker save <image> | (eval $(minikube docker-env) && docker load)
