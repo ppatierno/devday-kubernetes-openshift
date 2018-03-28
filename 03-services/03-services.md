@@ -1,6 +1,8 @@
 # Services
 
-Creation
+> For this example it's necessary to deploy the ReplicaSets from "02-replicasets" example
+
+## Creation
     
     kubectl create -f vertx-http-app-svc.yml
 
@@ -11,3 +13,7 @@ Enabling "NodePort", the service is accessible from outside the cluster and usin
 > Using minishift/minikube, its related IP address and node-port from service can be used
 
 Sending more requests to the app, the traffic is load balanced between the different backed pods.
+
+The `curl` script can be used for this purpose.
+
+    curl [IP]:[PORT] [COUNT]
