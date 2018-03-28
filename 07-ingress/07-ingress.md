@@ -9,7 +9,7 @@ Running the following command
 
 It's possible to see the deployed "ingress controller" which is in charge to handle the ingress.
 
-Creation
+## Creation
 
     kubectl create -f ingress.yml
 

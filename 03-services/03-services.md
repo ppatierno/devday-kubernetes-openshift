@@ -16,4 +16,4 @@ Sending more requests to the app, the traffic is load balanced between the diffe
 
 The `curl` script can be used for this purpose.
 
-    curl [IP]:[PORT] [COUNT]
+    ../curl.sh http://[IP address]:[Port] 1000

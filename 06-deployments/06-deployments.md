@@ -1,6 +1,6 @@
 # Deployments
 
-Creation
+## Creation
 
     kubectl create -f vertx-http-app-dep.yml
     kubectl create -f vertx-http-app-svc.yml
