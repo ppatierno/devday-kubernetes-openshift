@@ -35,4 +35,7 @@ After that, the ingress can be used with
 
 > Port `80` is used because the ingress is configured as using HTTP (so default port is 80).
 
+The `curl` script can be used for this purpose.
+
+    ../curl.sh http://[IP address]:[Port] 1000
     
