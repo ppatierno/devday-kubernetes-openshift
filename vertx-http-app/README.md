@@ -26,8 +26,11 @@ The Vert.x HTTP application "v2" for rolling update example.
 
 Finally the "fortune" application and the related webserver.
 
-    docker build -t ppatierno/fortune-web-server:latest f ./src/docker-images/Dockerfile-fortune-webserver .
-    docker build -t ppatierno/fortune:latest -f ../fortune/Dockerfile .
+    docker build -t ppatierno/fortune-web-server:latest -f ./src/docker-images/Dockerfile-fortune-webserver .
+
+From the `fortune` folder :
+
+    docker build -t ppatierno/fortune:latest -f Dockerfile .
 
 # Using Minishift or Minikube
 
