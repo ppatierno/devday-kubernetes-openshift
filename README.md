@@ -7,7 +7,7 @@ in Naples (March 28th, 2018) and organized by [DevDay](http://www.devday.it/) co
 
 Following the links to the resources for this meetup :
 
-* [slides](https://www.slideshare.net/paolopat/containers-orchestration-with-kubernetes-and-openshift) on Slideshare
+* [slides](https://www.slideshare.net/paolopat/containers-orchestration-with-kubernetes-and-openshift-92280115) on Slideshare
 
 Following the different examples provided in this demo.
 
